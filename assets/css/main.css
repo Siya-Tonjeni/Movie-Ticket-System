@@ -12,10 +12,12 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "poetsenOne";
+  --heading-font: 'poetsenOne';
+  --nav-font:'poetsenOne' ;
 }
+
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
@@ -28,7 +30,8 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #012970;  /* The default color of the main navmenu links */
+  --heading-color: #012970; /* Color for headings, subheadings and title throughout the website */
+  --nav-color: #4154f1; ;  /* The default color of the main navmenu links */
   --nav-hover-color: #4154f1; /* Applied to main navmenu links when they are hovered over or active */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -48,6 +51,16 @@ body {
   background-color: var(--background-color);
   font-family: var(--default-font);
 }
+
+@font-face {
+  font-family: 'poetsenOne';
+  src: url('PoetsenOne-Regular.ttf') format('ttf'),
+       url('PoetsenOne-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  --default-font :'poetsenone'
+}
+
 
 a {
   color: var(--accent-color);
@@ -815,12 +828,15 @@ section,
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 80px 0 60px 0;
+  padding: 60px 0 40px 0;
   display: flex;
   align-items: center;
-  background: url(../img/hero-bg.png) top center no-repeat;
   background-size: cover;
+  justify-content: center;
+  background-image: url()
+  
 }
+
 
 .hero h1 {
   margin: 0;
@@ -977,7 +993,7 @@ section,
   background-color: var(--background-color);
   color: var(--default-color);
   padding: 30px;
-  box-shadow: 0px 0 10px color-mix(in srgb, var(--default-color), transparent 92%);
+  /*box-shadow: 0px 0 10px color-mix(in srgb, var(--default-color), transparent 92%);*/
   text-align: center;
   transition: 0.3s;
   height: 100%;
@@ -985,9 +1001,10 @@ section,
 }
 
 .values .card img {
-  padding: 30px 50px;
+  padding: 20px 40px;
   transition: 0.5s;
   transform: scale(1.1);
+  
 }
 
 .values .card h3 {
