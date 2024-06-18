@@ -206,3 +206,39 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+// Ticket Page
+
+const searchInput = document.getElementById('query');
+const movieCards = document.querySelectorAll('.single-card');
+const genreDropdown = document.querySelector('#navmenu ul li.dropdown:last-child'); 
+
+// Function to search movie titles
+function filterBySearchTerm(searchTerm) {
+  movieCards.forEach(movieCard => {
+    const movieTitle = movieCard.querySelector('.info h3').textContent.toLowerCase();
+    movieCard.style.display = movieTitle.includes(searchTerm.toLowerCase()) ? 'block' : 'none';
+  });
+}
+
+// Function to filter genres
+function filterByGenre(selectedGenre) {
+  if (!selectedGenre) return; 
+
+  movieCards.forEach(movieCard => {
+    const movieGenres = movieCard.querySelector('.genres').textContent.toLowerCase();
+    movieCard.style.display = movieGenres.includes(selectedGenre.toLowerCase()) ? 'block' : 'none';
+  });
+}
+
+// Event listener for search input changes
+searchInput.addEventListener('keyup', (event) => {
+  const searchTerm = event.target.value;
+  filterBySearchTerm(searchTerm);
+});
+
+// Event listener for genre selection changes
+genreDropdown.addEventListener('click', (event) => {
+  const selectedGenre = event.target.textContent.trim().toLowerCase(); 
+  filterByGenre(selectedGenre);
+});
