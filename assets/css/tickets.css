@@ -142,8 +142,12 @@
 }
 .container-booked-movie{
   position: relative;
-  left: 20%;
   top: 80px;
+  margin: 0 50px;
+}
+.movie-price{
+  font-size: 40px;
+  font-weight: bold;
 }
   
   
