@@ -22,11 +22,35 @@
               </h3>
               <div class="mb-1 text-muted age-restriction"></div>
               <p class="card-text mb-auto genres"></p>
+              <p class="card-text mb-auto movie-time"></p>
+              <p class="text-dark">R<span class="movie-price"></span></p>
               
             </div>
-            <img id="movieImage" class="card-img-right flex-auto d-none d-md-block" src="" alt="Movie image" width="300" height="300">
+            <img id="movieImage" class="card-img-right flex-auto d-none d-md-block" src="" alt="Movie image" width="245" height="300">
           </div>
         </div>
+        <div class="col-md-6">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250">
+              <div class="card-body d-flex flex-column align-items-start">
+                <h3>Start your booking</h3>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item">Choose your cinema:  
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Auckland Park</option>
+                            <option value="1">Rosebank</option>
+                            <option value="2">Sandton</option>
+                            <option value="3">Pretoria</option>
+                          </select>
+                    </li>
+                    <li class="list-group-item">Choose your date & time:</li>
+                    <li class="list-group-item">Choose a snack combo:</li>
+        
+                  </ul>
+                
+              </div>
+            </div>
+          </div>
     </div>
     </div>
 
@@ -42,11 +66,16 @@
               const movieTitle = urlParams.get('movieTitle');
               const ageRestriction = urlParams.get('ageRestriction');
               const genre = urlParams.get('genre');
+              const moviePrice = urlParams.get('moviePrice');
+              const movieTime = urlParams.get('movieTime');
               const movieImage = urlParams.get('movieImage');
+
 
               document.querySelector('.title-movie').textContent = movieTitle;
               document.querySelector('.age-restriction').textContent = ageRestriction;
               document.querySelector('.genres').textContent = genre;
+              document.querySelector('.movie-price').textContent = moviePrice;
+              document.querySelector('.movie-time').textContent = movieTime;
               document.getElementById('movieImage').src = movieImage;
             </script>
   <script src="assets/js/main.js"></script>

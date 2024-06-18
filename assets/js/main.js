@@ -253,11 +253,13 @@ function handleBookNowClick(event) {
   const ageRestrictionElement = clickedCard.querySelector('.info small.age-restriction');
 const ageRestriction = ageRestrictionElement ? ageRestrictionElement.textContent : 'NA'; // Set default value if not found
   const genre = clickedCard.querySelector('.info p.genres').textContent.trim(); // Get genre text
+  const moviePrice = clickedCard.querySelector('.info p.movie-price').textContent.trim(); //Get price of the movie
+  const movieTime = clickedCard.querySelector('.info p.movie-time').textContent.trim(); // Get the time
   const movieImage = clickedCard.querySelector('.img-area img').src; // Get movie image URL (unchanged)
 
 
   // Redirect to another page with the movie image URL as a query parameter
-  window.location.href = `cart.html?movieTitle=${movieTitle}&ageRestriction=${ageRestriction}&genre=${genre}&movieImage=${movieImage}`;
+  window.location.href = `cart.html?movieTitle=${movieTitle}&ageRestriction=${ageRestriction}&genre=${genre}&moviePrice=${moviePrice}&movieTime=${movieTime}&movieImage=${movieImage}`;
 }
 
 // Add event listener to each book now button
