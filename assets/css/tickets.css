@@ -134,6 +134,17 @@
     color: #000;
     font-size: 11px;
 }
+
+/* Cart.css */
+/* Booked movie */
+.cart-title{
+  margin: 30px;
+}
+.container-booked-movie{
+  position: relative;
+  left: 20%;
+  top: 80px;
+}
   
   
   
