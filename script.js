@@ -15,13 +15,16 @@ function init(){
     for (let u in users) {
         savedUsers[u] = JSON.stringify(users[u])
     }
-    
-    localStorage.setItem('savedUsers', savedUsers);
 
+    localStorage.setItem('savedUsers', savedUsers);    
+}
+
+function loginInit(){
+    
     let a = localStorage.getItem('savedUsers');  
+
     
-    
-    for (let i = 0; i < a.length; i++) {
+    for (let x = 0; x < a.length + 1; x++ ){
     
     let b = a.substring(0, a.indexOf('}') + 1);
 
@@ -30,40 +33,27 @@ function init(){
 
     b = JSON.parse(b);
     users.push(b);
+    }   
     
-    }
-
-
-    
-
+    console.log(users);
 }
 
-function login(){
-    
-    //console.log(localStorage.getItem('savedUsers'));
 
-    let a = localStorage.getItem('savedUsers');
-     
- 
-        //a = a.substring(0, a.indexOf('}') + 1);
-        //users.push(JSON.parse(a));
-        //a.replace(a, '');
-        //}
+function login(){
 
 
     let username = document.getElementById('sign-Username').value;
     let password = document.getElementById('sign-Password').value;
 
-    
-    for (let user in users) {
-       if (username == users[user].getUserName && password == users[user].getPassword){
-           document.location.href = 'tickets.html';
-       }
-       else {
-            alert('Username or Password is incorrect');
-        } 
-    } 
-
+    for (let user in users){
+        if (users[user].username == username && users[user].password == password){
+            location.href = 'tickets.html';
+        }
+        else{
+            console.log('there is no username or password');
+            return
+        }
+    }
 
 }
 
