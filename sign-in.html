@@ -8,37 +8,46 @@
     <!-- js script -->
     <script src="script.js"></script>
 
+    <!-- Boxicons Font -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Stylesheet Link -->
+     <link rel="stylesheet" href="assets/css/signin.css">
+
 
 </head>
 <body>
-
+<div class="wrapper">
     <form action='sign-in.html'>
+        <h1>Login</h1>
         <ul>
-            <ul>
-                <label for="Username">Username:</label>
+            <ul class="input-box">
+                <label for="Username"> Username:</label>
                 <input type="text" id="sign-Username" name="sign-username" />
+                <i class='bx bxs-user'></i>
             </ul>
         
-            <ul>
+            <ul class="input-box">
                 <label for="Password">Password:</label>
                 <input type="text" id="sign-Password" name="sign-password" />
+                <i class='bx bxs-lock-alt'></i>
             </ul>
         
-            <a href="forgot-password.html">Forgot Password</a>
+            <a href="forgot-password.html" class="forgot-password">Forgot Password</a>
             
             <ul>
             <button type="button" id="signIn" onclick="login()" name="sign-in-button"> Sign In</button>
             </ul>
         
             <ul>
-                <p>Dont have an account?</p>
+                <p class="register-link">Dont have an account?</p>
                 <button><a href="create-account.html"> Create one now </a></button>
             </ul>
         
         </ul>
     
     </form>
-
+</div>
     
 </body>
 </html>
