@@ -3,15 +3,7 @@ let users = [];
 let savedUsers = [];
 
 
-
-
-function init(){
-    users = [];
-    let newUser = new userObject('joshua', 'joshua1', 'josh', '18');
-    users.push(newUser);
-    newUser = new userObject('a','b','c','d');
-    users.push(newUser);
-
+function saveUsers(){
     for (let u in users) {
         savedUsers[u] = JSON.stringify(users[u])
     }
@@ -19,8 +11,7 @@ function init(){
     localStorage.setItem('savedUsers', savedUsers);    
 }
 
-function loginInit(){
-    
+function loadUsers(){
     let a = localStorage.getItem('savedUsers');  
 
     
@@ -34,8 +25,65 @@ function loginInit(){
     b = JSON.parse(b);
     users.push(b);
     }   
+}
+
+
+function init(){
+users = [];  
+}
+
+function loginInit(){
+loadUsers();
+}
+
+function ticketsInit(){
+
+
+let movie1 = document.getElementsByClassName();
+console.log(movie1);
+
+
+}
+
+function createAccount(){
+
     
-    console.log(users);
+    let fN = document.getElementById('create-firstName').value;
+    let uN = document.getElementById('create-Username').value;
+    let pS = document.getElementById('create-Password').value;
+    let psConfirm = document.getElementById('create-Confirm').value
+    let DoB = document.getElementById('DOB').value;
+    
+    
+    
+    
+    if (fN != '' && uN != '' && pS != '' && psConfirm != '' && DoB != '' ){
+        if (pS === psConfirm){
+            
+            let deltaAge = Date.now() - new Date(DoB).getTime();
+            let ageDate = new Date(deltaAge);
+            let actualAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+            
+
+           let u = new userObject(fN, uN, pS, actualAge);
+           users.push(u);
+
+           saveUsers();
+           location.href = 'sign-in.html';
+        } 
+        else
+        {
+            alert('Passwords do not match!');
+            return;
+        }
+    }
+    else
+    {
+        alert('Please fill in all required fields!');
+        return
+    }
+
 }
 
 

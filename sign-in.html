@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up!</title>
 
+    <link rel="stylesheet" href="assets/css/signin.css">
+
     <!-- js script -->
     <script src="script.js"></script>
 
-    <!-- Boxicons Font -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Stylesheet Link -->
-     <link rel="stylesheet" href="assets/css/signin.css">
-
 
 </head>
-<body>
-<div class="wrapper">
+<body onload="loginInit()">
+
+    
+    <div class="wrapper">
     <form action='sign-in.html'>
-        <h1>Login</h1>
         <ul>
             <ul class="input-box">
-                <label for="Username"> Username:</label>
+                <label for="Username">Username:</label>
                 <input type="text" id="sign-Username" name="sign-username" />
-                <i class='bx bxs-user'></i>
+                <i class='bx bxs-user'></i>    
             </ul>
         
             <ul class="input-box">
@@ -47,7 +44,7 @@
         </ul>
     
     </form>
-</div>
+    </div>
     
 </body>
 </html>

@@ -4,45 +4,36 @@
     <meta charset="UTF-8" />
     <title>Create Account</title>
 
+    <link rel="stylesheet" href="assets/css/signin.css">
+
     <!-- link js -->
     <script src="script.js"></script>
-    <!-- Stylesheet Link -->
-     <link rel="stylesheet" href="assets/css/signin.css">
+
 </head>
 <body>
 
-<div class="wrapper">
-    <form action='create-account.html'  method="post">
-        <h1>Register </h1>
+
+    <div class="wrapper">
+    <form action='create-account.html'>
         <ul>
             <ul class="input-box">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="create-firstname" />
+                <label for="create-firstName">First Name:</label>
+                <input type="text" id="create-firstName" name="create-firstname" />
             </ul>
 
             <ul class="input-box">
-                <label for="lastName"> Last Name:</label>
-                <input type="text" id="lastName" name="create-lastname" />
-            </ul>
-
-            <ul class="input-box">
-                <label for="Username">Username:</label>
+                <label for="create-Username">Username:</label>
                 <input type="text" id="create-Username" name="create-username" />
             </ul>
             
             <ul class="input-box">
-                <label for="Password">Passsword:</label>
+                <label for="create-Password">Passsword:</label>
                 <input type="text" id="create-Password" name="create-password" />
             </ul>
         
             <ul class="input-box">
-                <label for="Email">Email:</label>
-                <input type="text" id="userName" name="create-email" />
-            </ul>
-
-            <ul class="input-box">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="text" id="phoneNumber" name="create-phone-number" />
+                <label for="create-Confirm">Confirm Password:</label>
+                <input type="text" id="create-Confirm" name="create-confirm" />
             </ul>
             
             <ul class="input-box">
@@ -56,19 +47,19 @@
             </ul>
             
             <ul>
-                <button id="create-createAccountButton" onclick="CreateAccount();" method="post" > <a href="sign-in.html"> Create Account </a></button>
+                <button type="button" id="create-createAccountButton" onclick="createAccount();">Create Account</button>
             </ul>
 
             <ul>
                 <p>Have an account?:</p>
-                <button id="create-signInButton"> <a href="sign-in.html">Sign In</a></button>
+                <button type="button" id="create-signInButton"> <a href="sign-in.html">Sign In</a></button>
             </ul>
 
 
         </ul>
     
     </form>
-</div>
+    </div>
 
     
 </body>
